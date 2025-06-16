@@ -124,10 +124,20 @@ let statusOption = {
 function loadQusetion(object) {
      let question = document.getElementById("question");
      let answers = document.querySelectorAll(".answer");
+     let answerbox = document.querySelector(".answers")
+     const buttons = Array.from(answers);
+     for(let i = buttons.length - 1; i > 0; i --){
+          const j = Math.floor(Math.random() * (i + 1));
+          [buttons[i], buttons[j]] = [buttons[j], buttons[i]]
+     }
+     buttons.forEach(btn => {
+          answerbox.appendChild(btn);
+     })
      question.innerText = object.question;
      answers.forEach(button => {
           button.innerText = object.options[button.value]
      })
+
 }
 
 function windowOnload() {
