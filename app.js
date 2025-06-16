@@ -272,7 +272,7 @@ let Data = [
             "D": "Foreziy, trofik, fabrik, edafik",
             "E": "Topik, fabrik, ekotop, trofik"
           },
-          "correct_answer": "C"
+          "correct_answer": "A"
         },
         {
           "question": "Xüssusi monitorinq sistemi nәdir?",
@@ -283,7 +283,7 @@ let Data = [
             "D": "Lokal antropogen tәsirlәrә mәruz qalmayan zonaların monitorinqi",
             "E": "Lokal antropogen tәsirlәrә mәruz qalan tәhlükәsiz zonaların monitorinqi"
           },
-          "correct_answer": "C"
+          "correct_answer": "A"
         },
         {
           "question": "Biosferin vacib funksiyası olan “hәyatın dayanıqlı saxlanılması” nә ilә әlaqәdardır?",
@@ -338,7 +338,7 @@ let Data = [
             "D": "Təzə, yarım çürümüş, çürümüş, çürüntü",
             "E": "Təzə, çürüntü, yarım çürümüş, çürümüş"
           },
-          "correct_answer": "D"
+          "correct_answer": "A"
         },
         {
           "question": "Kimyəvi meliorasiya üsulunun fazalarını göstərin:",
@@ -360,7 +360,7 @@ let Data = [
             "D": "15,5%",
             "E": "20-21%"
           },
-          "correct_answer": "B"
+          "correct_answer": "A"
         },
         {
           "question": "Hәyat üçün istifadә olunan, biosferdә dövr edәn kimyәvi elementlәrin vә qeyri¬üzvü birlәşmәlәrin hәrәkәti adlanır?",
@@ -371,7 +371,7 @@ let Data = [
             "D": "Mikroelementlәrin dövr etmәsi",
             "E": "Birlәşmәlәrin dövr etmәsi"
           },
-          "correct_answer": "C"
+          "correct_answer": "A"
         },
         {
           "question": "Eyni növün fәrdlәri arasındakı münasibәtlәr hansı tip reaksiya adlanır.",
@@ -393,7 +393,7 @@ let Data = [
             "D": "1870, Mario – Malina",
             "E": "1872, Pol – Krutsen"
           },
-          "correct_answer": "B"
+          "correct_answer": "A"
         },
         {
           "question": "Biohumusun tərkibində NPK faizlə miqdarı:",
@@ -426,7 +426,7 @@ let Data = [
             "D": "Üzvi maddələrin sintetik çevrilməsindən",
             "E": "Üzvi- mineral maddələrdən"
           },
-          "correct_answer": "C"
+          "correct_answer": "A"
         },
         {
           "question": "Təbiətdə maddələr dövranının neçə forması mövcuddur?",
@@ -492,7 +492,7 @@ let Data = [
             "D": "Biosenozlarda heyvanlar arasında",
             "E": "Meşə ekosistemində bitkilər arasında"
           },
-          "correct_answer": "C"
+          "correct_answer": "A"
         },
         {
           "question": "Yaşıl gübrə (sideratlar):",
@@ -503,7 +503,7 @@ let Data = [
             "D": "Fosforlu birləşməsindən ibarət preparatlardır",
             "E": "Şiş bakteriyalarından ibarət preparatlardır"
           },
-          "correct_answer": "C"
+          "correct_answer": "A"
         },
         {
           "question": "İlk dəfə turşulu yağışlar harada və neçənci ildə müşahidə edilmişdir?",
