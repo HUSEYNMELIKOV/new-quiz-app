@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Təsadüfi sınaq Demo v1.0</title>
+     <style>
+          * {
+               margin: 0px;
+               padding: 0px;
+               outline: none;
+               box-sizing: border-box;
+               font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          }
+
+          .container {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               width: 100%;
+               height: 100vh;
+               flex-direction: column;
+               background-color: #252525;
+          }
+
+          .questionContainer {
+               display: flex;
+               width: 100%;
+               justify-content: center;
+          }
+
+          .questionBox {
+               width: 80%;
+               height: auto;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               gap: 15px;
+
+          }
+
+          div.answers {
+               display: flex;
+               flex-direction: column;
+               width: 100%;
+               gap: 10px;
+
+               .answer {
+                    width: 100%;
+                    padding: 10px 12px;
+                    background-color: rgb(17, 99, 154);
+                    border-radius: 2.5px;
+                    color: rgb(255, 255, 255);
+                    text-align: start;
+                    border: none;
+                    border: 1px solid #fff;
+               }
+
+               .correct {
+                    background-color: rgb(40, 114, 40);
+               }
+
+               .false {
+                    background-color: rgb(128, 15, 15);
+               }
+          }
+
+          #question {
+               font-size: 18px;
+               font-weight: 500;
+               padding: 12px;
+               border: 2px solid green;
+               background-color: rgba(148, 255, 155, 0.592);
+               width: 100%;
+          }
+
+          .header {
+               position: fixed;
+               box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+               background-color: #fff;
+               width: 100%;
+               display: flex;
+               justify-content: center;
+               padding: 12px 16px;
+               top: 0px;
+          }
+
+          .changeQusetion {
+               width: 100%;
+               padding: 10px 14px;
+               background-color: rgb(0, 0, 0);
+               border: 1px solid #fff;
+               color: #fff;
+               border-radius: 2.5px;
+          }
+
+          .header h1 {
+               font-size: 20px;
+          }
+          .lockScreen{
+               width: 100%;
+               height: 100%;
+               background-color: rgba(0, 0, 0, 0.5);
+               position: absolute;
+               left: 0px;
+               top: 0px;
+               z-index: 99;
+               display: none;
+          }
+
+          .statusWindow{
+               width: 70%;
+               padding: 12px;
+               display: none;
+               position: absolute;
+               left: 50%;
+               top: 50%;
+               transform: translate(-50%,-50%);
+               background-color: #fff;
+               z-index: 100;
+               border-radius: 5px;
+               .grid{
+                    display: grid;
+                    grid-template-columns: repeat(2, 50%);
+                    grid-template-rows: repeat(6, 50px);
+                    gap: 2px;
+                    span{
+                         background-color: rgb(137, 236, 162);
+                         display: flex;
+                         justify-content: center;
+                         align-items: center;
+                         text-align: center;
+                    }
+                    span.res{
+                         font-weight: 500;
+                         font-size: 20px;
+                    }
+                    .showStatus{
+                         grid-area: 6/1/7/3;
+                         border: none;
+                         background-color: darkcyan;
+                         color: #fff;
+                         font-size: 20px;
+                    }
+               }
+          }
+          
+          .statusWindow.show, .lockScreen.show{
+               display: block;
+          }
+          .heading{
+               display: flex;
+               width: 100%;
+               justify-content: space-between;
+               padding: 0px 0px 10px 0px;
+               button{
+                    background-color: rgb(90, 90, 90);
+                    color: #fff;
+                    border: none;
+                    padding: 2px 4px;
+               }
+          }
+          #resultbtn{
+               width: 100%;
+               padding: 10px 14px;
+               border: none;
+               font-weight: 500;
+          }
+          .statusDiv{
+               width: 90%;
+               height: 90%;
+               position: absolute;
+               background-color: #fff;
+               display: none;
+               flex-direction: column;
+               left: 50%;
+               top: 50%;
+               transform: translate(-50%,-50%);
+               padding: 12px;
+               z-index: 101;
+               
+               .appendbox{
+                    width: 100%;
+                    height: 100%;
+                    overflow-y: scroll;
+                    background-color: #FFF;
+                    padding: 4px;
+                    h1{
+                         font-size: 16px;
+                         padding-top: 15px;
+                    }
+                    span{
+                         display: flex;
+                         width: 100%;
+                         padding-bottom: 15px;
+                         border-bottom: 1px solid gray;
+                    }
+               }
+          }
+          .appendbox::-webkit-scrollbar{
+               width: 5px;
+          }
+          .appendbox::-webkit-scrollbar-thumb{
+               background-color: rgb(43, 81, 151);
+          }
+          .statusDiv.show{
+               display: flex;
+          }
+          .heading-2{
+               display: flex;
+               width: 100%;
+               justify-content: space-between;
+               padding: 12px 0px;
+               button{
+                    background-color: rgb(90, 90, 90);
+                    color: #fff;
+                    border: none;
+                    padding: 2px 4px;
+                    font-size: 20px;
+               }
+               p{
+                    font-size: 20px;
+                    font-weight: 500px;
+                    color: rgb(80, 9, 9);
+               }
+          }
+     </style>
+</head>
+
+<body>
+     <div class="container">
+          <div class="header">
+               <h1>Təsadüfi sınaq</h1>
+          </div>
+          <div class="questionContainer">
+               <div class="questionBox">
+                    <h1 id="question">Test</h1>
+                    <div class="answers">
+                         <button class="answer" value="A"> Test</button>
+                         <button class="answer" value="B"> Test</button>
+                         <button class="answer" value="C"> Test</button>
+                         <button class="answer" value="D"> Test</button>
+                         <button class="answer" value="E"> Test</button>
+                    </div>
+                    <button class="changeQusetion" onclick="windowOnload()">Yeni Təsadüfi sual</button>
+                    <button onclick="showResult()" id="resultbtn">Anlıq 
+                    Nəticə</button>
+               </div>
+          </div>
+          <div class="statusWindow">
+               <div class="heading">
+                    <p>Anlıq Nəticə</p>
+                    <button class="back" onclick="closeResult()">Geri &leftarrow;</button>
+               </div>
+               <div class="grid">
+                    <span>Doğru</span>
+                    <span class="res">0</span> 
+                    <span>Yalnış</span>
+                    <span class="res">0</span>
+                    <span>Cavablanan sual sayı</span>
+                    <span class="res">0</span>
+                    <span>faizlə</span>
+                    <span class="res">0%</span>
+                    <span>50 suala nisbət</span>
+                    <span class="res">0</span>
+                    <button class="showStatus" onclick="showStatus()">Status</button>
+               </div>
+          </div>
+          <div class="statusDiv">
+               <div class="heading-2">
+                    <p>Səhv cavablanan suallar</p>
+                    <button class="back-2" onclick="closeResult2()">Geri &leftarrow;</button>
+               </div>
+               <div class="appendbox">
+
+               </div>
+          </div>
+          <div class="lockScreen"></div>
+          
+     </div>
+     <script src="app.js"></script>
+</body>
+
+</html>
